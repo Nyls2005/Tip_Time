@@ -8,10 +8,13 @@
             Padding="30,0"
             Spacing="25">
             <Label Text="Valor" />
+            <Label 
+                x:Name="ErroLabel"
+                Text=""/>
             <Entry 
                 x:Name="ValorTotalEntry"
-                Placeholder="Coloque o valor" 
-                Text="1"/>
+                Placeholder="Coloque o valor da compra" 
+                />
             
             <Label Text="Gorjeta" />
             <Label 
