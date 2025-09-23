@@ -14,12 +14,34 @@
 
         private void ArredondaCimaBtn_Clicked(object sender, EventArgs e)
         {
-            Math.Ceiling(Convert.ToDouble(ValorTotalLabel));
+            double Porcentag = (double)PorcentagemSlider.Value;
+            double ValorTotal = (double.Parse(ValorTotalEntry.Text));
+
+            double ValorGorgeta = ValorTotal * (Porcentag / 100);
+
+            ValorGorjetaLabel.Text = ValorGorgeta.ToString("C");
+
+            PorcentagemGorjetaLabel.Text = Porcentag.ToString("F") + '%';
+
+            double ValorFinal = ValorTotal + ValorGorgeta;
+
+            ValorTotalLabel.Text = "R$" + Math.Ceiling(ValorFinal);
         }
 
         private void ArredondaBaixoBtn_Clicked(object sender, EventArgs e)
         {
-            Math.Floor(Convert.ToDouble(ValorTotalLabel));
+            double Porcentag = (double)PorcentagemSlider.Value;
+            double ValorTotal = (double.Parse(ValorTotalEntry.Text));
+
+            double ValorGorgeta = ValorTotal * (Porcentag / 100);
+
+            ValorGorjetaLabel.Text = ValorGorgeta.ToString("C");
+
+            PorcentagemGorjetaLabel.Text = Porcentag.ToString("F") + '%';
+
+            double ValorFinal = ValorTotal + ValorGorgeta;
+
+            ValorTotalLabel.Text = "R$" + Math.Floor(ValorFinal);
         }
 
         private void Porcentagem20Btn_Clicked(object sender, EventArgs e)
@@ -32,16 +54,16 @@
                 try
                 {
 
-                    float Porcentag = (float)PorcentagemSlider.Value;
-                    float ValorTotal = (float.Parse(ValorTotalEntry.Text));
+                    double Porcentag = (double)PorcentagemSlider.Value;
+                    double ValorTotal = (double.Parse(ValorTotalEntry.Text));
 
-                    float ValorGorgeta = ValorTotal * (Porcentag / 100);
+                    double ValorGorgeta = ValorTotal * (Porcentag / 100);
 
                     ValorGorjetaLabel.Text = ValorGorgeta.ToString("C");
 
                     PorcentagemGorjetaLabel.Text = Porcentag.ToString("F") + '%';
 
-                    float ValorFinal = ValorTotal + ValorGorgeta;
+                    double ValorFinal = ValorTotal + ValorGorgeta;
 
                     ValorTotalLabel.Text = ValorFinal.ToString("C");
 
