@@ -14,34 +14,50 @@
 
         private void ArredondaCimaBtn_Clicked(object sender, EventArgs e)
         {
-            double Porcentag = (double)PorcentagemSlider.Value;
-            double ValorTotal = (double.Parse(ValorTotalEntry.Text));
+            try
+            {
+                double Porcentag = (double)PorcentagemSlider.Value;
+                double ValorTotal = (double.Parse(ValorTotalEntry.Text));
 
-            double ValorGorgeta = ValorTotal * (Porcentag / 100);
+                double ValorGorgeta = ValorTotal * (Porcentag / 100);
 
-            ValorGorjetaLabel.Text = ValorGorgeta.ToString("C");
+                ValorGorjetaLabel.Text = ValorGorgeta.ToString("C");
 
-            PorcentagemGorjetaLabel.Text = Porcentag.ToString("F") + '%';
+                PorcentagemGorjetaLabel.Text = Porcentag.ToString("F") + '%';
 
-            double ValorFinal = ValorTotal + ValorGorgeta;
+                double ValorFinal = ValorTotal + ValorGorgeta;
 
-            ValorTotalLabel.Text = "R$" + Math.Ceiling(ValorFinal);
+                ValorTotalLabel.Text = "R$" + Math.Ceiling(ValorFinal);
+            }
+            catch (Exception r)
+            {
+                Console.WriteLine(r.ToString());
+                ErroLabel.Text = "Por favor, insira um valor válido.";
+            }
         }
 
         private void ArredondaBaixoBtn_Clicked(object sender, EventArgs e)
         {
-            double Porcentag = (double)PorcentagemSlider.Value;
-            double ValorTotal = (double.Parse(ValorTotalEntry.Text));
+            try
+            {
+                double Porcentag = (double)PorcentagemSlider.Value;
+                double ValorTotal = (double.Parse(ValorTotalEntry.Text));
 
-            double ValorGorgeta = ValorTotal * (Porcentag / 100);
+                double ValorGorgeta = ValorTotal * (Porcentag / 100);
 
-            ValorGorjetaLabel.Text = ValorGorgeta.ToString("C");
+                ValorGorjetaLabel.Text = ValorGorgeta.ToString("C");
 
-            PorcentagemGorjetaLabel.Text = Porcentag.ToString("F") + '%';
+                PorcentagemGorjetaLabel.Text = Porcentag.ToString("F") + '%';
 
-            double ValorFinal = ValorTotal + ValorGorgeta;
+                double ValorFinal = ValorTotal + ValorGorgeta;
 
-            ValorTotalLabel.Text = "R$" + Math.Floor(ValorFinal);
+                ValorTotalLabel.Text = "R$" + Math.Floor(ValorFinal);
+            }
+            catch (Exception r)
+            {
+                Console.WriteLine(r.ToString());
+                ErroLabel.Text = "Por favor, insira um valor válido.";
+            }
         }
 
         private void Porcentagem20Btn_Clicked(object sender, EventArgs e)
